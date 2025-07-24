@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { homemade } from "@/app/layout";
+import { homemade } from "@/app/fonts";
 
 const CYCLE_MS = 1200;
 const MIN_DELAY_MS = 80;

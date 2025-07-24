@@ -1,6 +1,6 @@
 "use client";
 
-import { homemade } from "@/app/layout";
+import { homemade } from "@/app/fonts";
 import { motion, type MotionProps } from "framer-motion";
 import Image from "next/image";
 

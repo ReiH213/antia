@@ -4,33 +4,6 @@ import Hero from "@/comp/Header";
 import RSVP from "@/comp/RSVP";
 import RsvpCallout from "@/comp/RsvpCallout";
 import OurHistory from "@/comp/Story";
-import { Milestone } from "@/comp/TImeline";
-
-const milestones: Milestone[] = [
-  { src: "/1.jpeg", delay: 0.5, title: "We met & fell in love", date: "2017" },
-  {
-    src: "/2.jpeg",
-    delay: 1.5,
-    title: "Adventure time (lots of fishing!)",
-    date: "2018",
-  },
-  {
-    src: "/3.jpeg",
-    delay: 2.3,
-    title: "We proclaimed our love for the Lord",
-    date: "2019",
-  },
-  {
-    src: "/4.jpeg",
-    delay: 3.2,
-    title: "We moved to AZ & adopted Goosey",
-    date: "2020",
-  },
-  { src: "/5.jpeg", delay: 4.4, title: "We got engaged!", date: "2023" },
-  { src: "/6.jpeg", delay: 5.1, title: "More memories..." },
-  { src: "/7.jpeg", delay: 5.9, title: "And more love" },
-  { src: "/8.jpeg", delay: 6.6, title: "…which brought us here" },
-];
 
 export default function Page() {
   return (

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { homemade } from "@/app/layout";
+import { homemade } from "@/app/fonts";
 
 // If you already export these from somewhere, import them instead:
 
