@@ -1,26 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --ivory: #f8f6f1;
+  --gold: #c7a462;
+  --grain-color: rgba(78, 63, 18, 0.25);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.bg-ivory {
+  background-color: var(--ivory);
+}
+.text-gold {
+  color: var(--gold);
+}
+html {
+  scroll-behavior: smooth;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/***** helpers *****/
+.fade-mask-b {
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 80%,
+    rgba(0, 0, 0, 0)
+  );
+}
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    /* cheap noise look using multiple gradients */ repeating-linear-gradient(
+      0deg,
+      var(--grain-color) 0 1px,
+      transparent 1px 2px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      var(--grain-color) 0 1px,
+      transparent 1px 2px
+    );
+  mix-blend-mode: multiply; /* so it tints the image */
+  opacity: 0.35; /* tune strength */
+}
+/***** marquee *****/
+.marquee {
+  --duration: 15s;
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+}
+.marquee__inner {
+  display: flex;
+  flex-wrap: nowrap;
+  animation: scroll var(--duration) linear infinite;
+}
+@keyframes scroll {
+  to {
+    transform: translateX(-50%);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/***** image grid swap *****/
+.crossfade {
+  position: relative;
+}
+.crossfade img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+.crossfade img.active {
+  opacity: 1;
 }
